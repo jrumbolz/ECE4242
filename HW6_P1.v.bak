@@ -129,7 +129,7 @@ module two_stage_pipe_tb;
 		@(negedge clk);
 		reset = 1'b0;
 		Data = 8'hA3;
-		En = 1;
+		En = 1
 		@(negedge clk);
 		En = 0;
 		Data = 8'hC3;
