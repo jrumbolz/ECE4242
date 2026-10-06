@@ -33,6 +33,7 @@ module controller(
 			s_wait:begin
 				if(recieved)begin
 					ns = s_idle;
+				end
 			end
 			default: ns = s_idle;	
 		endcase
