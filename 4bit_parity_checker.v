@@ -1,0 +1,133 @@
+`default_nettype none
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+module controller(
+	input wire clk, rst, recieved, load, //external
+	input wire parity_err, //internal
+	output reg [3:0] load_hold_reg, load_correct, load_incorrect
+);
+	reg [1:0] cs, ns;
+	reg [3:0] hold_reg
+	parameter s_idle = 2'b00;
+	parameter s_loaded = 2'b01;
+	parameter s_wait = 2'b10;
+	
+	//
+	always@(cs or recieved or load)begin
+		load_hold_reg = 0;
+		load_correct = 0;
+		load_incorrect = 0;
+		case(cs)
+			s_idle:begin
+				if(load)begin
+					ns = s_loaded;
+				end
+			end	
+			s_loaded:begin
+				if(parity_err)begin // is even
+					incorrect <= hold_reg	
+				end else begin // is odd
+					correct <= hold_reg	
+				end
+				ns = s_wait;
+			end	
+			s_wait:begin
+				if(recieved)begin
+					ns = s_idle;
+					load_correct = 1;
+				end
+				else
+					load_incorrect = 1;
+				end
+			end
+			default: ns = s_idle;	
+		endcase
+	end //always
+
+	//current state update
+	always@(posedge clk or posedge rst)begin
+		if(rst)
+			cs <= s_idle;
+		else
+			cs <= ns;
+		end
+	end //always
+endmodule
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+module datapath(
+	input wire clk, rst, //internal
+	input wire [3:0] data_in,
+	input wire [3:0] correct, incorrect, load_hold_reg, load_correct, load_incorrect, //external
+	output reg parity
+);
+	always
+
+endmodule
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+module parity_machine(
+	input wire clk, rst, recieved, load,
+	input wire [3:0] data_in,
+	output wire [3:0] correct, incorrect
+);
+	
+	controller controller(
+		.clk(clk), //external
+		.rst(rst),
+		.load(load),
+		.recieved(recieved),
+		.load_hold_reg(load_hold_reg), //internal
+		.load_correct(load_correct),
+		.load_incorrect(load_incorrect),
+		.parity_err(parity_err)
+	);
+	
+	datapath datapath(
+		.clk(clk), //external
+		.rst(rst),
+		.data_in(data_in),
+		.correct(correct),
+		.incorrect(incorrect),
+		.load_hold_reg(load_hold_reg), //internal
+		.load_correct(load_correct),
+		.load_incorrect(load_incorrect),
+		.parity_err(parity_err)
+	);
+endmodule
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+module parity_machine_tb;
+	reg clk, reset, En, Ld;
+	reg [3:0] data_in;
+	wire [15:0] R0;
+	
+	initial begin
+		clk = 1'b0;
+		forever #10 clk = !clk;
+	end
+	
+	initial begin
+		En=0; Ld=0; 
+		Data=0;
+		reset = 1'b1;
+		@(negedge clk);
+		@(negedge clk);
+		reset = 1'b0;
+		Data = 8'hA3;
+		En = 1;
+		@(negedge clk);
+		En = 0;
+		Data = 8'hC3;
+		@(negedge clk);
+		@(negedge clk);
+		Ld=1;
+		@(negedge clk);
+		Ld=0;
+		end // initial
+	
+	parity_machine parity machine(
+		.clk(clk), 
+		.rst(rst),
+		.load(load), 
+		.recieved(recieved),
+		.data_in(data_in), 
+		.correct(correct),
+		.incorrect(incorrect);
+endmodule

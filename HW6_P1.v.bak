@@ -58,7 +58,7 @@ endmodule
 module datapath(
 	input wire clk, reset, 
 	input wire load_P1_P0, clear_P1_P0, load_R0, 
-	input wire [7:0] Data, 
+	input wire [3:0] data_in, 
 	output reg [15:0] R0
 );
 	reg [7:0] P0, P1;
@@ -129,7 +129,7 @@ module two_stage_pipe_tb;
 		@(negedge clk);
 		reset = 1'b0;
 		Data = 8'hA3;
-		En = 1
+		En = 1;
 		@(negedge clk);
 		En = 0;
 		Data = 8'hC3;

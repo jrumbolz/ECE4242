@@ -9,37 +9,58 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 vcontroller
-Z0 !s110 1791166178
+Z0 !s110 1791223594
 !i10b 1
-!s100 :ZAOk;>_FQD;;>DYRKgR`2
-I:G[GOI`i?X82D`zILkBc`0
+!s100 4J<f6RY;=V>i2HM3@:CU31
+IMYeDKP:Y8579`a_5UOJMN3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Users/Jeds PC/Desktop/GitHub/ECE4242
-Z3 w1791166173
-Z4 8C:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v
-Z5 FC:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v
+Z2 dC:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242
+Z3 w1791223587
+Z4 8C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/4bit_parity_checker.v
+Z5 FC:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/4bit_parity_checker.v
 L0 3
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1791166178.000000
-Z8 !s107 C:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v|
-Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v|
+Z7 !s108 1791223594.000000
+Z8 !s107 C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/4bit_parity_checker.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/4bit_parity_checker.v|
 !i113 1
-Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-work work
 Z11 tCvgOpt 0
 vdatapath
-R0
+Z12 !s110 1791218583
 !i10b 1
 !s100 OkBO9[]j@]lI<jI:BY9170
-IW;blR82K07X:n?T>P8Q?f0
+Ik[X^d;]<?PUF;2Wb=5NcR3
+R1
+R2
+Z13 w1791218575
+Z14 8C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v
+Z15 FC:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v
+L0 58
+R6
+r1
+!s85 0
+31
+Z16 !s108 1791218582.000000
+Z17 !s107 C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v|
+Z18 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v|
+!i113 1
+R10
+R11
+vparity_machine_tb
+R0
+!i10b 1
+!s100 oi6XJ5?Rkg2^YzE7>T:bZ1
+I@<E1WVFZ2CEXSn]o_mH?T2
 R1
 R2
 R3
 R4
 R5
-L0 58
+L0 48
 R6
 r1
 !s85 0
@@ -51,44 +72,44 @@ R9
 R10
 R11
 vtwo_stage_pipe
-R0
+R12
 !i10b 1
 !s100 ^NkYSX]P3h^L]CAW5l0bk1
-I0S51h`7HMnIY0Y?d7?<^b3
+IPKlPl4AoHNgD]9lk6?;=G3
 R1
 R2
-R3
-R4
-R5
+R13
+R14
+R15
 L0 89
 R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+R16
+R17
+R18
 !i113 1
 R10
 R11
 vtwo_stage_pipe_tb
-R0
+R12
 !i10b 1
 !s100 mR_kD:@^Az_YCKAL:@dO`1
-I9G:0`XgNILN5<Ue<Fb8W<0
+IQFG@VL13X1dFa<WoKX8bg3
 R1
 R2
-R3
-R4
-R5
+R13
+R14
+R15
 L0 116
 R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+R16
+R17
+R18
 !i113 1
 R10
 R11
