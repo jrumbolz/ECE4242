@@ -125,7 +125,7 @@ module parity_machine(
     );
 endmodule
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-module tb_parity_machine;
+module parity_machine_tb;
 
     	// Testbench Signals
     	reg clk;
@@ -137,30 +137,28 @@ module tb_parity_machine;
     	wire [3:0] correct;
     	wire [3:0] incorrect;
 	
-    	// 1. Clock Generation (50MHz clock, 20ns period)
+    	//Clock 50MHz clock, 20ns period
     	initial begin
     	    clk = 1'b0;
     	    forever #10 clk = !clk;
     	end
 
-    // 2. Stimulus Block
     initial begin
-        // Initialize Inputs
-        rst = 1'b1;
+        //rst
+	rst = 1'b1;
         load = 1'b0;
         recieved = 1'b0;
         data_in = 4'b0000;
+        repeat (2) 
 
-        // Release reset cleanly after 2 clock cycles
-        repeat (2) @(negedge clk);
+	@(negedge clk);
         rst = 1'b0;
         @(negedge clk);
-
         data_in = 4'b0001;
         load = 1'b1;       // Trigger state transition to s_loaded
         @(negedge clk);
         load = 1'b0;       // Clear load signal; system goes to s_wait on next posedge
-        
+       
         @(negedge clk);    // Allow a cycle to observe outputs sitting in s_wait
         
         recieved = 1'b1;   // Release FSM from s_wait back to s_idle
@@ -180,10 +178,9 @@ module tb_parity_machine;
         @(negedge clk);
         recieved = 1'b0;
 
-        // End Simulation
         repeat (3) @(negedge clk);
 	end //intial
-    // 3. Device Under Test (DUT) Instantiation
+
     parity_machine uut (
         .clk(clk),
         .rst(rst),

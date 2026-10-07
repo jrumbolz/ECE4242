@@ -9,13 +9,13 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 vcontroller
-Z0 !s110 1791252972
+Z0 !s110 1791389952
 !i10b 1
 !s100 jQJ<1clJ3AS75zFJlYND=1
 IUaH>N`>HKeo8z;Won2Bih2
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/Jeds PC/Desktop/GitHub/ECE4242
-Z3 w1791252969
+Z3 w1791335583
 Z4 8C:/Users/Jeds PC/Desktop/GitHub/ECE4242/parity_machine.v
 Z5 FC:/Users/Jeds PC/Desktop/GitHub/ECE4242/parity_machine.v
 L0 4
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1791252972.000000
+Z7 !s108 1791389952.000000
 Z8 !s107 C:/Users/Jeds PC/Desktop/GitHub/ECE4242/parity_machine.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/GitHub/ECE4242/parity_machine.v|
 !i113 1
@@ -50,6 +50,48 @@ R9
 !i113 1
 R10
 R11
+vdebounce_counter
+R0
+!i10b 1
+!s100 YLnFWE8ej6z9Pk1Ai4XWK1
+Im3n`H7:B8D;`>f^53DcCB3
+R1
+R2
+Z12 w1791389932
+Z13 8C:/Users/Jeds PC/Desktop/GitHub/ECE4242/debounce.v
+Z14 FC:/Users/Jeds PC/Desktop/GitHub/ECE4242/debounce.v
+L0 28
+R6
+r1
+!s85 0
+31
+R7
+Z15 !s107 C:/Users/Jeds PC/Desktop/GitHub/ECE4242/debounce.v|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/GitHub/ECE4242/debounce.v|
+!i113 1
+R10
+R11
+vdebounce_sync
+R0
+!i10b 1
+!s100 W^mcPK:Vd:0lNJIgU0bk`0
+I4gLFOD>eJ0F?K>co]@6oj1
+R1
+R2
+R12
+R13
+R14
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11
 vparity_machine
 R0
 !i10b 1
@@ -72,37 +114,16 @@ R9
 R10
 R11
 vparity_machine_tb
-!s110 1791251364
-!i10b 1
-!s100 KAd[KSWfDo3oe@1Y^F_zF2
-I8GCD^WK2M6L2L==eX<6jS1
-R1
-R2
-w1791251343
-R4
-R5
-L0 119
-R6
-r1
-!s85 0
-31
-!s108 1791251364.000000
-R8
-R9
-!i113 1
-R10
-R11
-vtb_parity_machine
 R0
 !i10b 1
-!s100 9RaTPfaRQ1F^Q;MD_<LXN0
-I>BkQ4NiKRK?O7WzMbGCKl2
+!s100 E7>ez>E_8g2<3EQNZG0l92
+IbST<4RkX=CoJMZXYB`2651
 R1
 R2
 R3
 R4
 R5
-L0 128
+Z17 L0 128
 R6
 r1
 !s85 0
@@ -113,45 +134,87 @@ R9
 !i113 1
 R10
 R11
+vtb_debounce
+R0
+!i10b 1
+!s100 7ZkV23O<<@22KBL1^_O:R0
+IWe;_GNb`<DZ8hUcBbd;5=1
+R1
+R2
+R12
+R13
+R14
+L0 73
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11
+vtb_parity_machine
+!s110 1791334282
+!i10b 1
+!s100 >J1Q=MOg0<kiAF4[>d==l3
+INKAB9j>`4aCTeT_Bij<1e0
+R1
+R2
+w1791334262
+R4
+R5
+R17
+R6
+r1
+!s85 0
+31
+!s108 1791334282.000000
+R8
+R9
+!i113 1
+R10
+R11
 vtwo_stage_pipe
-Z12 !s110 1791218583
+R0
 !i10b 1
 !s100 ^NkYSX]P3h^L]CAW5l0bk1
-IPKlPl4AoHNgD]9lk6?;=G3
+Iaj^43]KYVVNajBlLk3doX2
 R1
-Z13 dC:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242
-Z14 w1791218575
-Z15 8C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v
-Z16 FC:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v
+R2
+Z18 w1791166173
+Z19 8C:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v
+Z20 FC:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v
 L0 89
 R6
 r1
 !s85 0
 31
-Z17 !s108 1791218582.000000
-Z18 !s107 C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v|
-Z19 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jedidiah Rumbolz/OneDrive - University of Colorado Colorado Springs/Desktop/GitHub/ECE4242/HW6_P1.v|
+R7
+Z21 !s107 C:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v|
+Z22 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/GitHub/ECE4242/HW6_P1.v|
 !i113 1
 R10
 R11
 vtwo_stage_pipe_tb
-R12
+R0
 !i10b 1
 !s100 mR_kD:@^Az_YCKAL:@dO`1
-IQFG@VL13X1dFa<WoKX8bg3
+InYgLn9>K658J<jio_:jY00
 R1
-R13
-R14
-R15
-R16
+R2
+R18
+R19
+R20
 L0 116
 R6
 r1
 !s85 0
 31
-R17
-R18
-R19
+R7
+R21
+R22
 !i113 1
 R10
 R11
