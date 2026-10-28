@@ -1,5 +1,22 @@
 `default_nettype none
 ///////////////////////////////////////////////
+module stimulus_generator(
+	input wire clk, rst,
+	output reg [5:0] out
+);
+	
+	reg [5:0] counter = 6'b000000;
+	
+	always@(posedge clk or posedge rst)begin
+		if(rst)
+			counter <= 4'b000000;
+		else
+			counter <= counter +1;
+		
+		out  <=counter;
+	end//always
+endmodule
+///////////////////////////////////////////////
 module adder_orig(
 	input wire add12, add34,
 	input wire data1, data2, data3, data4,
@@ -19,21 +36,28 @@ module adder_orig(
 	end
 endmodule
 ///////////////////////////////////////////////
-module stimulus_generator(
-	input wire clk, rst,
-	output reg [5:0] out
+module adder_final(
+    input wire add12, add34, data1, data2, data3, data4,
+    output reg [1:0] data_out
 );
-	
-	reg [5:0] counter = 6'b000000;
-	
-	always@(posedge clk or posedge rst)begin
-		if(rst)
-			counter <= 4'b000000;
-		else
-			counter <= counter +1;
-		
-		out  <=counter;
-	end//always
+    reg op1, op2; 
+
+    always @* begin
+        if (add12) begin
+            op1 = data1;
+            op2 = data2;
+        end 
+        else if (add34) begin
+            op1 = data3;
+            op2 = data4;
+        end 
+        else begin
+            op1 = 1'b0;
+            op2 = 1'b0;
+        end
+
+        data_out = op1 + op2;
+    end
 endmodule
 ///////////////////////////////////////////////
 module comparator(
@@ -42,10 +66,9 @@ module comparator(
 );
 	
 	always@(*)begin
+		out <= 0;//default only throws 1 if !=
 		if(in2 != in1)
 			out <= 1;
-		else
-			out <= 0;
 	end//always
 endmodule
 ///////////////////////////////////////////////
