@@ -1,4 +1,11 @@
-{C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v}
+{C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/test_RISC_SPM.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/test_RISC_SPM.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module test_RISC_SPM
+
+Top level modules:
+	test_RISC_SPM
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Clock_Unit
 
