@@ -1,0 +1,156 @@
+`default_nettype none
+`timescale 1ns/1ns
+module test_RISC_SPM ();
+  reg rst;
+  wire clk;
+  integer error = 0, i;
+  parameter word_size = 8;
+  parameter mem_size = 256;
+  reg [word_size-1:0] golden_mem [mem_size-1:0];
+
+  Clock_Unit Clock_Unit (clk);
+  RISC_SPM RISC_SPM (clk, rst);
+
+`include "opcodes_include.v" 
+
+ initial begin
+
+// Load up the golden_mem with instructions and data
+  golden_mem[0] = 8'b0000_00_00;		// NOP
+  golden_mem[1] = {RD, 4'b00_10};		// Read from Mem[130], store in R2, R2=2
+  golden_mem[2] = 130;
+  golden_mem[3] = {RD, 4'b00_11};		// Read from Mem[131], store in R3, R3=0
+  golden_mem[4] = 131;
+  golden_mem[5] = {RD, 4'b00_01};		// Read from Mem[128], store in R1, R1=6
+  golden_mem[6] = 128;
+  golden_mem[7] = {RD, 4'b00_00};		// Read from Mem[129], store in R0, R0=1
+  golden_mem[8] = 129;
+
+  // Begin Loop. Decrement R1 by 1. When R1=0 branch, otherwise increment R3 by 2. 
+  golden_mem[9] = {SUB, 4'b00_01};		// Sub R1-R0 to R1, R1=6-1=5
+
+  golden_mem[10] = {BRZ, 4'b00_00};		// BRZ to Mem[134] = 13 when Z_flag = 0
+  golden_mem[11] = 134;				// Branch address
+
+  golden_mem[12] = {ADD, 4'b10_11};		// Add R2+R3 to R3, R3=(2+0)=2
+  
+  golden_mem[13] = {BR, 4'b00_11};		// BR to Mem[140] = 9
+  golden_mem[14] = 140;            		// Branch address
+  // End loop
+  
+  golden_mem[15] = {WR, 4'b11_00};		// WR R3=A to Mem[131]
+  golden_mem[16] = 131;    
+  
+  golden_mem[17] = {BR, 4'b00_11};		// BR
+  golden_mem[18] = 139;
+  
+  golden_mem[19] = {COPY, 4'b11_01};		// COPY from R3 to R1 
+
+  golden_mem[30] = 8'b1111_00_00;		// HALT
+  
+// Load data
+  golden_mem[128] = 6;
+  golden_mem[129] = 1;
+  golden_mem[130] = 2;
+  golden_mem[131] = 0;
+  golden_mem[134] = 15;
+  golden_mem[139] = 30;
+  golden_mem[140] = 9;
+ end // initial
+ 
+ initial begin
+   #2 rst = 0;  
+   #10 rst = 1;
+ end
+
+ initial begin
+
+    #5;
+  
+    // Load program and data from golden_mem
+    for (i=0;i<mem_size;i=i+1) begin
+	    RISC_SPM.SRAM.memory[i] = golden_mem[i];
+	  end
+			 
+  end
+ 
+ initial begin
+ #2800;
+ 
+ // Check register expected values
+ check_8bits(RISC_SPM.Processor.R0_out, 8'h1, "R0"); // Mem[129]=1
+ check_8bits(RISC_SPM.Processor.R1_out, 8'h0, "R1"); // SUB R0 R1
+ check_8bits(RISC_SPM.Processor.R2_out, 8'h2, "R2"); // mem[130]=2
+ check_8bits(RISC_SPM.Processor.R3_out, 8'hA, "R3"); // mem[131]=0  
+    
+ check_8bits(RISC_SPM.Processor.PC_count, 8'd31, "PC"); // Location of halt instruction + 1
+ check_8bits(RISC_SPM.Processor.Y_value, 8'h1, "Reg_Y"); // SUB R0 R1, R0=src=1
+ check_8bits(RISC_SPM.address, 8'd30, "Add_R"); // Last mem access 
+ check_8bits(RISC_SPM.instruction, 8'hF0, "IR"); // Halt instruction
+ check_8bits(RISC_SPM.Zflag, 1, "Reg_Z"); // Final SUB R0 R1, R0=0
+ 
+ // The only memory location that was modified was mem[131]
+ golden_mem[131] = 8'd10;
+ 
+  // Check that memory was not corrupted
+  for (i=0;i<mem_size;i=i+1) begin
+	  check_8bits(golden_mem[i], RISC_SPM.SRAM.memory[i], "RISC_SPM.SRAM.memory");
+	end
+ 
+ $display("%t: Number of errors is %d", $time, error); 
+
+#200;
+
+ $finish;
+
+ end // initial
+ 
+ task check_8bits(input [7:0] actual_val,
+                  input [7:0] expected_val,
+                  input [95:0] reg_string
+                  );
+                  
+  if (actual_val !== expected_val) begin
+     error = error + 1;
+     $display("%t: Error %s: Expected value of 0x%h != actual value of 0x%h", $time, reg_string, expected_val, actual_val);
+   end    
+ endtask  
+
+// Display an ASCII version of the instruction for debug
+reg [191:0] instr_ASCII;
+always @* begin
+  // Determine the opcode
+  case (RISC_SPM.instruction[7:4]) 
+  NOP: instr_ASCII = "NOP";
+  ADD: instr_ASCII = "ADD";
+  SUB: instr_ASCII = "SUB";
+  AND: instr_ASCII = "AND";
+  NOT: instr_ASCII = "NOT";
+  RD: instr_ASCII = "RD";
+  WR: instr_ASCII = "WR";
+  BR: instr_ASCII = "BR";
+  BRZ: instr_ASCII = "BRZ";
+  COPY: instr_ASCII = "COPY";//updated line for COPY
+  default: instr_ASCII = "ERROR";
+  endcase
+  
+  // Determine the SRC
+  case (RISC_SPM.instruction[3:2])
+    0: instr_ASCII = {instr_ASCII, " R0"};
+    1: instr_ASCII = {instr_ASCII, " R1"};
+    2: instr_ASCII = {instr_ASCII, " R2"};
+    3: instr_ASCII = {instr_ASCII, " R3"};
+  endcase 
+     
+  // Determine the DEST
+  case (RISC_SPM.instruction[1:0])
+    0: instr_ASCII = {instr_ASCII, " R0"};
+    1: instr_ASCII = {instr_ASCII, " R1"};
+    2: instr_ASCII = {instr_ASCII, " R2"};
+    3: instr_ASCII = {instr_ASCII, " R3"};
+  endcase
+  
+end // always
+
+
+endmodule

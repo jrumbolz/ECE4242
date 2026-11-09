@@ -1,0 +1,68 @@
+{C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Clock_Unit
+
+Top level modules:
+	Clock_Unit
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux5_1.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux5_1.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux5_1
+
+Top level modules:
+	mux5_1
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Memory_Unit.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Memory_Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Memory_Unit
+
+Top level modules:
+	Memory_Unit
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/opcodes_include.v} {0 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/opcodes_include.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+** Error: C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/opcodes_include.v(2): (vlog-2155) Global declarations are illegal in Verilog 2001 syntax.
+
+} {3.0 4.0} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Processing_Unit.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Processing_Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Processing_Unit
+
+Top level modules:
+	Processing_Unit
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Register_Unit.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Register_Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Register_Unit
+
+Top level modules:
+	Register_Unit
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/RISC_SPM.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/RISC_SPM.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RISC_SPM
+
+Top level modules:
+	RISC_SPM
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Control_Unit.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Control_Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Control_Unit
+
+Top level modules:
+	Control_Unit
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux3_1.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux3_1.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux3_1
+
+Top level modules:
+	mux3_1
+
+} {} {}} {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Alu_RISC.v} {1 {vlog -work work -stats=none {C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Alu_RISC.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Alu_RISC
+
+Top level modules:
+	Alu_RISC
+
+} {} {}}

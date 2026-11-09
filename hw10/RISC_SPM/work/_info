@@ -1,0 +1,231 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Jeds PC/Desktop/GitHub/ECE4242
+vAlu_RISC
+Z0 !s110 1794156820
+!i10b 1
+!s100 bbf?M7k4QmXoGdP:oQLMh1
+IRe;2i:U;DWMO[UiITm4ae0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM
+Z3 w1448937740
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Alu_RISC.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Alu_RISC.v
+Z4 Fopcodes_include.v
+L0 2
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1794156820.000000
+!s107 opcodes_include.v|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Alu_RISC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Alu_RISC.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+n@alu_@r@i@s@c
+vClock_Unit
+R0
+!i10b 1
+!s100 ?R:lH=?DmR9CXcESUC5I80
+I7m4]Q_<]8:?WbloKAhdz?1
+R1
+R2
+R3
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Clock_Unit.v|
+!i113 1
+R7
+R8
+n@clock_@unit
+vControl_Unit
+!s110 1794176071
+!i10b 1
+!s100 C0e?dBelSWO[B`3CTRaJL3
+Ie]546^JaWDoAInCU<:noA1
+R1
+R2
+w1794176059
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Control_Unit.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Control_Unit.v
+R4
+L0 2
+R5
+r1
+!s85 0
+31
+!s108 1794176071.000000
+!s107 opcodes_include.v|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Control_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Control_Unit.v|
+!i113 1
+R7
+R8
+n@control_@unit
+vMemory_Unit
+Z9 !s110 1794156821
+!i10b 1
+!s100 CI;PKa8BVng9ikB_zS:EF2
+ICNMC06XB61h`hVCGclF0J0
+R1
+R2
+R3
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Memory_Unit.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Memory_Unit.v
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Memory_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Memory_Unit.v|
+!i113 1
+R7
+R8
+n@memory_@unit
+vmux3_1
+R9
+!i10b 1
+!s100 ?S;B@zjGTkS:<AOE7mf^O3
+Il0=Cl1^YN:HeVGXFgmm0V0
+R1
+R2
+R3
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux3_1.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux3_1.v
+L0 3
+R5
+r1
+!s85 0
+31
+Z10 !s108 1794156821.000000
+!s107 C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux3_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux3_1.v|
+!i113 1
+R7
+R8
+vmux5_1
+R9
+!i10b 1
+!s100 G[>nIET[d41fEZ5M0F8DU1
+I8h6DBVFbQioO@cIUDPPRR2
+R1
+R2
+R3
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux5_1.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux5_1.v
+L0 3
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux5_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/mux5_1.v|
+!i113 1
+R7
+R8
+vProcessing_Unit
+R9
+!i10b 1
+!s100 ]Enh4f5k_=LCeW=hd3cZU2
+IZ?2W<z6cC[?imU7RjlRO@3
+R1
+R2
+R3
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Processing_Unit.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Processing_Unit.v
+L0 2
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Processing_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Processing_Unit.v|
+!i113 1
+R7
+R8
+n@processing_@unit
+vRegister_Unit
+R9
+!i10b 1
+!s100 7VJj@4=`B<MAF3T^eH5k_0
+IbAo8>JCRIPT[cOO_m=@I23
+R1
+R2
+R3
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Register_Unit.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Register_Unit.v
+L0 2
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Register_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/Register_Unit.v|
+!i113 1
+R7
+R8
+n@register_@unit
+vRISC_SPM
+R9
+!i10b 1
+!s100 V7>nXa[7FeL8Y50H^eEL61
+Ik7Q=zf@7148MRl2A;6I`Z3
+R1
+R2
+R3
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/RISC_SPM.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/RISC_SPM.v
+L0 2
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/RISC_SPM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/RISC_SPM.v|
+!i113 1
+R7
+R8
+n@r@i@s@c_@s@p@m
+vtest_RISC_SPM
+!s110 1794235941
+!i10b 1
+!s100 iefgb:SeTCLF>MgXOgLf52
+IDKX<IJ^h20OCIIVjGE@]Y0
+R1
+R2
+w1794235885
+8C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/test_RISC_SPM.v
+FC:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/test_RISC_SPM.v
+R4
+L0 3
+R5
+r1
+!s85 0
+31
+!s108 1794235941.000000
+!s107 opcodes_include.v|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/test_RISC_SPM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeds PC/Desktop/UCCS/ECE4242/hw10/RISC_SPM/test_RISC_SPM.v|
+!i113 1
+R7
+R8
+ntest_@r@i@s@c_@s@p@m
